@@ -8,7 +8,7 @@ export const INITIAL_PROFILE: Profile = {
   bio: 'Desenvolvedor Fullstack focado em criar experiências digitais escaláveis, modernas e de alto impacto. Especialista em ecossistemas React & Node.',
   githubUrl: 'https://github.com/lancarvalho',
   linkedinUrl: 'https://linkedin.com',
-  email: 'contato@lancarvalho.dev'
+  email: 'luizaugustobhz@gmail.com'
 };
 
 export const INITIAL_PROJECTS: Project[] = [
