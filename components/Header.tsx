@@ -5,15 +5,19 @@ import Logo from './Logo';
 
 interface HeaderProps {
   onAdminClick: () => void;
+  onHomeClick: () => void;
 }
 
-const Header: React.FC<HeaderProps> = ({ onAdminClick }) => {
+const Header: React.FC<HeaderProps> = ({ onAdminClick, onHomeClick }) => {
   const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
     e.preventDefault();
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
+    onHomeClick();
+    setTimeout(() => {
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }, 100);
   };
 
   return (
@@ -21,7 +25,7 @@ const Header: React.FC<HeaderProps> = ({ onAdminClick }) => {
       <div className="max-w-7xl mx-auto px-4 md:px-6 h-20 flex items-center justify-between">
         <div 
           className="flex items-center gap-3 cursor-pointer group" 
-          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+          onClick={onHomeClick}
         >
           <Logo className="w-8 h-8 transition-transform group-hover:scale-110" />
           <div className="flex items-center text-2xl tracking-tighter">
