@@ -9,7 +9,8 @@ interface ProjectCardProps {
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
   return (
-    <div className="group bg-slate-900/50 border border-white/10 rounded-3xl overflow-hidden transition-all duration-300 hover:scale-[1.03] hover:shadow-2xl hover:shadow-blue-500/10 hover:border-[#3B82F6]/30">
+    <div className="group relative bg-slate-900/50 border border-white/10 rounded-3xl overflow-hidden transition-all duration-300 ease-out hover:scale-[1.03] hover:-translate-y-1 hover:border-[#3B82F6]/60 hover:shadow-[0_0_30px_-5px_rgba(59,130,246,0.4)]">
+      <div className="pointer-events-none absolute inset-0 rounded-3xl ring-1 ring-inset ring-transparent group-hover:ring-[#3B82F6]/30 transition-all duration-300 z-10" />
       <div className="aspect-video w-full overflow-hidden bg-slate-800 relative">
         <img 
           src={project.thumbnailUrl} 
